@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCB OXY</title>
+    <link rel="stylesheet" href="kontak-kami.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="gambar/logo 2.jpeg" type="image/icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="gambar/logo 2.jpeg" alt="logomcb" class="logo-navbar">
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.html">Produk Kami</a></li>
+            <li><a href="kontak-kami.html">Kontak Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="image-container">
+        <img src="gambar/toko.jpg" alt="Toko MCB OXY" class="bg-image">
+        <div class="text-overlay">
+        <p>Selamat Datang Di MCB OXY!</p>
+        <p>Berikut Kontak Kami Untuk Info Lebih Lanjut.</p>
+        </div>
+    </div>
+
+    <div class="kontak-wrapper">
+        <div class="gmaps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3664724890987!2d108.62939881477329!3d-6.953880595015093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6580f4f4f4f4f4%3A0x123456789abcdef!2sJl.%20Pelajar%20No.15%2C%20Cintaratu%2C%20Kec.%20Lakbok%2C%20Kabupaten%20Ciamis%2C%20Jawa%20Barat%2046385!5e0!3m2!1sid!2sid!4v1678901234567!5m2!1sid!2sid"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="form-kontak">
+            <h3>Ada pertanyaan? Kirim pesan ke kami langsung!</h3>
+            <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf9TEZ8mKOVS1mph6b8ay9LCk1NTA-CaWGLR4jjUzmwP5GTeQ/formResponse" method="POST">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="entry.932080273" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="entry.1525331220" required>
+
+            <label for="subjek">Subjek</label>
+            <input type="text" id="subjek" name="entry.2072831971" required>
+
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="entry.488490221" rows="5" required></textarea>
+
+            <button type="submit">Kirim Pesan</button>
+            </form>
+            <div id="successMessage">
+                Terima kasih, pesan Anda terkirim!
+            </div>
+        </div>
+    </div>
+
+    <div class="tentangkami">
+        <h2>Tentang Kami</h2>
+        <p>Agen Resmi : PT DANONE, PT PERTAMINA, PT SAMATOR</p>
+        <p>Jl.Pelajar No.15, Cintaratu</p>
+        <p>Kecamatan Lakbok, Kabupaten Ciamis</p>
+        <p>Jawa Barat 46385</p>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir default (yang akan membuka tab baru)
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const successMessage = document.getElementById('successMessage');
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Penting untuk Google Forms guna mencegah masalah CORS
+            })
+            .then(() => {
+                // Saat pengiriman berhasil (atau dianggap berhasil karena mode no-cors)
+                form.reset(); // Mengosongkan kolom formulir
+                successMessage.style.display = 'block'; // Menampilkan pesan sukses
+                // Anda bisa menyembunyikan pesan setelah beberapa detik jika mau
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000); // Sembunyikan setelah 5 detik
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                // Opsional, tampilkan pesan error kepada pengguna
+                alert('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.');
+            });
+        });
+    </script>
+
+</body>
+</html>

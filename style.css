@@ -1,0 +1,138 @@
+/* Reset dasar */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fb;
+  color: #2c3e50;
+}
+
+
+/* Navbar container */
+.navbar {
+    background-color: #eaf4ec;
+    padding: 20px 30px;
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.logo-navbar {
+  height: 60px;
+  width: auto;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #a9e7ad; /* biru muda lembut */
+}
+
+/* Gambar toko */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.image-container .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  font-size: 22px;
+}
+
+/* Produk section */
+.produk-section {
+  padding: 40px 10%;
+  background-color: #f1f1f1;
+  /* border-top: 3px solid #90C43D; */
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.produk-deskripsi {
+  padding-left: 50px;
+  flex: 1;
+}
+
+.produk-gambar img {
+  width: 200px;
+  height: auto;
+}
+
+/* Tombol Selengkapnya */
+.produk-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.btn-produk {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #90C43D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-produk:hover {
+  background-color: #315f7d;
+}
+
+
+/* Tentang Kami */
+.tentangkami {
+  background-color: #eaf4ec;
+  text-align: center;
+  padding: 30px;
+  color: #2c3e50;
+  /* border-top: 3px solid #90C43D; */
+}

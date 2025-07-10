@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Detail Produk - MCB OXY</title>
+    <link rel="icon" href="gambar/logo 2.jpeg" type="image/icon">
+    <link rel="stylesheet" href="produk.css">
+    <style>
+    
+        /* CSS Tambahan untuk Halaman Detail Produk - Disimpan di sini agar tidak mengubah produk.css */
+        .detail-container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .detail-image-wrapper {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .detail-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .detail-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .detail-info h2 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .detail-info p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .detail-info ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .detail-info ul li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .detail-info .harga {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .detail-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .detail-image-wrapper, .detail-info {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="gambar/logo 2.jpeg" alt="logomcb" class="logo-navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html">Produk Kami</a></li>
+                <li><a href="#">Kontak Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="detail-container">
+        <div class="detail-image-wrapper">
+            <img id="detail-gambar-produk" src="" alt="Gambar Produk" class="detail-image">
+        </div>
+        <div class="detail-info">
+            <h2 id="detail-nama-produk"></h2>
+            <p id="detail-deskripsi-produk"></p>
+            <h3>Spesifikasi:</h3>
+            <ul id="detail-spesifikasi-list">
+                </ul>
+            <p class="harga">Harga: <span id="detail-harga-produk"></span></p>
+            <a href="produk.html" class="back-button">Kembali ke Daftar Produk</a>
+        </div>
+    </div>
+
+    <div class="tentangkami">
+        <h2>Tentang Kami</h2>
+        <p>Agen Resmi : PT DANONE, PT PERTAMINA, PT SAMATOR</p>
+        <p>Jl.Pelajar No.15, Cintaratu</p>
+        <p>Kecamatan Lakbok, Kabupaten Ciamis</p>
+        <p>Jawa Barat 46385</p>
+    </div>
+    
+
+    <script src="dataProduk.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
